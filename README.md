@@ -14,9 +14,9 @@ Build and compare several machine learning models for predicting passenger survi
 ## EDA
 - Class balance is moderately imbalanced: about 62% class `0`, 38% class `1`.
 - Missing values:
-  - `Age`: many missing values
-  - `Embarked`: a few missing values
-  - `Cabin`: many missing values (not used in this version of the model)
+  - `Age`: 177 missing values
+  - `Embarked`: 2 missing values
+  - `Cabin`: 687 missing values
 
 ## Preprocessing
 - Train/test split with stratification by target.

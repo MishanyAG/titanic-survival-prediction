@@ -98,7 +98,7 @@ xgb_pipe = Pipeline([
 ])
 dummy = DummyClassifier(strategy="most_frequent")
 
-# Features for RandomizedSearchCV
+# Hyperparameter distributions for RandomizedSearchCV
 param_dist_lr = {
     "classifier__C": [0.001, 0.01, 0.1, 1, 10, 100],
     "classifier__max_iter": [100, 500, 1000, 1500, 2000],
@@ -184,7 +184,7 @@ df_metrics = pd.DataFrame(results)
 best_row = df_metrics.loc[df_metrics["F1"].idxmax()]
 best_model_name = best_row["Model"]
 best_model = models[best_model_name]
-tn, fp, fn, tp = confusion_matrix(y_test, predict).ravel()
+tn, fp, fn, tp = confusion_matrix(y_test, best_model.predict(X_test)).ravel()
 
 # Error analysis
 errors = X_test.copy()
