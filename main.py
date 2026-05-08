@@ -221,7 +221,7 @@ Error analysis:
 False positives: {fp}
 False negatives: {fn}
 
-Top - 5 important features:
+Top-5 important features:
 {importance_df["Features"].head(5).to_string(index=False)}""")
 
 # Excel
